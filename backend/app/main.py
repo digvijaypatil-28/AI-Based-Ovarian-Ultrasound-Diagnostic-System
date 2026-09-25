@@ -30,8 +30,10 @@ origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://localhost:3000",
-    "*"  # Development environment fallback
 ]
+if settings.FRONTEND_URL and settings.FRONTEND_URL not in origins:
+    origins.append(settings.FRONTEND_URL)
+origins.append("*")  # Development fallback
 
 app.add_middleware(
     CORSMiddleware,

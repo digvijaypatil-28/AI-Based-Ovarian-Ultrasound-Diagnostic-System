@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     MODEL_PATH: str = os.getenv("MODEL_PATH", "./models/resnet18.pkl")
     UPLOAD_DIR: str = os.getenv("UPLOAD_DIR", "./uploads")
     REPORT_DIR: str = os.getenv("REPORT_DIR", "./reports")
+    FRONTEND_URL: str = os.getenv("FRONTEND_URL", "http://localhost:5173")
 
     class Config:
         case_sensitive = True
